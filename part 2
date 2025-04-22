@@ -1,0 +1,54 @@
+using System;
+namespace Main_prog 
+{
+    class Shape
+    {
+        protected double radius = 0 , side1 = 0, side2 = 0;
+        public Shape()
+        {
+            Console.WriteLine("Shape Initialized");
+        }
+        public Shape(double radius)
+        {
+            this.radius = radius;
+        }
+    }
+        public Shape(double side1, double side2)
+        {
+            this.side1 = side1;
+            this.side2 = side2;
+        }
+        class Circle : Shape
+        {
+        public Circle(double side1, double side2) : base(radius)
+            {
+            Console.WriteLine("Circle Initialized radius : "+ this.radius);
+        }
+        public void area()
+        {
+            return Math.PI* radius*radius; 
+        }
+    }
+    class Square : Shape
+    {
+        public Square(double side1, double side2) : base(side1,side2)
+        {
+            Console.WriteLine("Square Initialized side 1 : "+ this.side1 + " side 2 : " + this.side2);
+        }
+        public void area()
+        {
+            return side1 * side2;
+        }
+    }
+  class Program
+  {
+      static void Main()
+      {
+           Circle test_Shape = new Circle (4.5);
+           Square test_Shape = new Square (side1: 4.2, side2: 4.5);
+           
+           Console.WriteLine("Area of Circle "+ test_Shape.Area());
+      Console.WriteLine("Area of Square "+ test_Shape.Area());
+      }
+  }
+}
